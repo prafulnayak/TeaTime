@@ -26,9 +26,11 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 import static org.hamcrest.Matchers.anything;
 
+import android.os.SystemClock;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -58,6 +60,10 @@ public class MenuActivityScreenTest {
     @Rule
     public ActivityTestRule<MenuActivity> mActivityTestRule = new ActivityTestRule<>(MenuActivity.class);
 
+    @Before
+    public void loadImage(){
+
+    }
     /**
      * Clicks on a GridView item and checks it opens up the OrderActivity with the correct details.
      */
@@ -66,6 +72,7 @@ public class MenuActivityScreenTest {
 
         // Uses {@link Espresso#onData(org.hamcrest.Matcher)} to get a reference to a specific
         // gridview item and clicks it.
+//        SystemClock.sleep(5000);
         onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(1).perform(click());
 
         // Checks that the OrderActivity opens with the correct tea name displayed

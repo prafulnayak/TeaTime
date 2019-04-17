@@ -35,7 +35,7 @@ import java.util.ArrayList;
  */
 class ImageDownloader {
 
-    private static final int DELAY_MILLIS = 3000;
+    private static final int DELAY_MILLIS = 0;
 
     // Create an ArrayList of mTeas
     final static ArrayList<Tea> mTeas = new ArrayList<>();
